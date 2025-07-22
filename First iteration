@@ -1,0 +1,37 @@
+#dis = (0.278 × 1.5 × v) + v² / (254 × (f + G))
+#s – Stopping distance in meters
+#t – Perception-reaction time in seconds, this has been replaced with 1.5 as that is the avrage responce time
+#v – Speed of the car in km/h.
+#G – Grade (slope) of the road, expressed as a decimal. Positive for an uphill grade and negative for a downhill road. This input will be provided by a digital level eithin the car.
+#f – Coefficient of friction between the tires and the road. It is assumed to be 0.7 on a dry road and 0.35 on a wet road. This will be determined True of False by the cars rain sensor.
+
+speed = input("Input Speed")
+# Define a dictionary with input words and their corresponding values
+weather = {
+    "dry": 0.7,
+    "wet": 0.27,
+}
+
+# Ask the user for input
+user_input = input("Weather Condition: ").lower()  # Convert input to lowercase for consistency
+
+# Assign the value based on the input word
+if user_input in word_values:
+    assigned_value = weather[user_input]
+    friction = {assigned_value}
+# Grade/ Slope is precentage entered in as a whole number
+grade = input("Inpute Slope")
+time = 1.5
+friction = float(assigned_value)
+t = float(time)
+v = float(speed)
+g = float(grade)
+f = float(friction)
+groupA = (0.278 * t * v)
+ga= float(groupA)
+groupB = v**2
+gb = float(groupB)
+groupC = (254 * (f + (g/100)))
+gc = float(groupC)
+dis = round(ga + gb / gc)
+print("You should be", dis, "Meters away")
